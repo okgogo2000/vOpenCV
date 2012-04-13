@@ -217,7 +217,7 @@ bool VideoInput::init(const std::string& file_name)
 
 		if (!_frame.empty())
 		{
-			printf("Reading from image %s.\n", file_name);
+			printf("Reading from image %s.\n", file_name.c_str());
 			_InputType = From_Image;
 		}
 		else
@@ -225,12 +225,12 @@ bool VideoInput::init(const std::string& file_name)
 			_capture = _capture.open(file_name);
 			if(_capture.isOpened())
 			{
-				printf("Reading from video %s.\n", file_name);
+				printf("Reading from video %s.\n", file_name.c_str());
 				_InputType = From_Video;
 			}
 			else
 			{
-				printf("Could not open file %s.\n", file_name);
+				printf("Could not open file %s.\n", file_name.c_str());
 				return false;
 			}
 		}
